@@ -1,0 +1,52 @@
+#N canvas 1579 -98 1276 984 12;
+#X obj 259 233 + 1;
+#X obj 261 266 f;
+#X floatatom 261 293 5 0 0 2 - - -;
+#X text 299 137 1 reset;
+#X obj 260 429 makenote 90 500;
+#X obj 262 459 noteout 1;
+#X msg 259 359 58;
+#X msg 303 359 60;
+#X msg 344 360 62;
+#X msg 383 359 63;
+#X msg 407 360 65;
+#X obj 371 458 pgmout 1;
+#X obj 125 200 metro 1000;
+#X obj 125 172 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 26 171 toggle -->;
+#X msg 302 176 0;
+#X obj 261 321 sel 0 1 2 3 4;
+#X obj 260 388 t f f;
+#X text 27 135 2 - counts automatically;
+#X text 14 198 metronome -->;
+#X text 29 20 3 - COUNTS AUTOMATICALLY. The automatic count can be
+done through the use of the <metro> object that outputs a bang at each
+time interval as defined in the argument (1000 ms in the example).
+The <metro> object starts when receives 1 (<toggle> on) and stops when
+receives 0 (<toggle> off).;
+#X text 311 253 In this example the counter reset and the stop to the
+<metro> are not yet automatic.....;
+#X obj 349 497 counter4;
+#X text 178 500 go to counter4 -->;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 16 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 6 0 17 0;
+#X connect 7 0 17 0;
+#X connect 8 0 17 0;
+#X connect 9 0 17 0;
+#X connect 10 0 17 0;
+#X connect 12 0 1 0;
+#X connect 13 0 12 0;
+#X connect 15 0 1 1;
+#X connect 16 0 6 0;
+#X connect 16 1 7 0;
+#X connect 16 2 8 0;
+#X connect 16 3 9 0;
+#X connect 16 4 10 0;
+#X connect 17 0 4 0;
+#X connect 17 1 11 0;

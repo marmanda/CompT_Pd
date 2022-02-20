@@ -1,0 +1,53 @@
+#N canvas 132 24 1246 814 12;
+#X obj 70 212 + 1;
+#X msg 119 183 0;
+#X obj 52 244 f;
+#X obj 49 424 makenote 90 500;
+#X obj 47 449 noteout 1;
+#X msg 48 369 58;
+#X msg 92 369 60;
+#X msg 133 370 62;
+#X msg 174 370 63;
+#X msg 227 369 65;
+#X obj 210 433 pgmout 1;
+#X obj 34 183 metro 1000;
+#X obj 34 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 100 307 5 0 0 0 - - -;
+#X obj 50 306 % 5;
+#X obj 50 334 sel 0 1 2 3 4;
+#X floatatom 99 283 5 0 0 0 - - -;
+#X obj 34 147 t f b;
+#X obj 49 398 t f f;
+#X text 176 283 <-- count without module;
+#X text 26 10 5 COUNT AND GO ON UNTIL STOPPED (LOOP). Here the counter
+goes on until stopped (loop). This is obtained through the use of the
+<%> (module) object which \, once the count reaches the ceiling expressed
+in the argument \, outputs the remainder keeping the count always under
+the limit of the ceiling.;
+#X text 178 307 <-- count with the module object (loop);
+#X connect 0 0 2 1;
+#X connect 1 0 2 1;
+#X connect 2 0 0 0;
+#X connect 2 0 16 0;
+#X connect 2 0 14 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 5 0 18 0;
+#X connect 6 0 18 0;
+#X connect 7 0 18 0;
+#X connect 8 0 18 0;
+#X connect 9 0 18 0;
+#X connect 11 0 2 0;
+#X connect 12 0 17 0;
+#X connect 14 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 5 0;
+#X connect 15 1 6 0;
+#X connect 15 2 7 0;
+#X connect 15 3 8 0;
+#X connect 15 4 9 0;
+#X connect 17 0 11 0;
+#X connect 17 1 1 0;
+#X connect 18 0 3 0;
+#X connect 18 1 10 0;

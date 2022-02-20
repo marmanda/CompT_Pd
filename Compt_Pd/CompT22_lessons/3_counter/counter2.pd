@@ -1,0 +1,50 @@
+#N canvas 0 23 1440 757 12;
+#X obj 104 101 + 1;
+#X msg 142 65 0;
+#X obj 87 134 f;
+#X obj 52 66 bng 15 250 50 0 empty empty empty 17 7 0 20 -258113 -1
+-1;
+#X floatatom 87 161 5 0 0 2 - - -;
+#X text 134 38 1 reset;
+#X obj 90 357 makenote 90 500;
+#X obj 92 387 noteout 1;
+#X msg 85 227 58;
+#X msg 129 227 60;
+#X msg 170 228 62;
+#X msg 209 227 63;
+#X msg 252 228 65;
+#X obj 260 389 pgmout 1;
+#X obj 87 189 sel 0 1 2 3 4;
+#X obj 88 326 t f f;
+#X text 23 37 2 count;
+#X obj 259 428 counter3;
+#X text 216 317 <--- the <trigger> object routes the incoming MIDI
+pitches first to <pgmout> for timbre selection and then to <makenote>
+for sound production;
+#X text 88 431 go to counter3 -->;
+#X text 23 10 2 - COUNT AND PLAY;
+#X text 294 186 <-- new object that routes the incoming numbers towards
+different outlets according to the order of the arguments. The last
+outlet receives all the other numbers. The <counter> together with
+<sel> allow the performance of the scale fragment without clicking
+manually the note messages.;
+#X connect 0 0 2 1;
+#X connect 1 0 2 1;
+#X connect 2 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 14 0;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 14 0 8 0;
+#X connect 14 1 9 0;
+#X connect 14 2 10 0;
+#X connect 14 3 11 0;
+#X connect 14 4 12 0;
+#X connect 15 0 6 0;
+#X connect 15 1 13 0;

@@ -1,0 +1,5 @@
+#N canvas 2213 -27 1061 425 12;
+#X text 22 54 LAB2_ASSIGNMENT Write a patch that combines in a musically
+interesting way the various expressive potentialities of MIDI (e.g.
+a note sequence \, each with different timbre \, modulation \, volume
+\, pan and sustain).;

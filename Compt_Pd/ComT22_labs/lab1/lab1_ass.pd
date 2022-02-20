@@ -1,0 +1,14 @@
+#N canvas 431 24 913 785 12;
+#X obj 57 157 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 57 343 5 0 0 0 - - -;
+#X obj 116 158 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 157 325 - 0;
+#X obj 157 357 abs;
+#X text 33 28 LAB1_ASSIGNMENT: these two sliders are linked and the
+output value of the first moves the second. Change this patch using
+the <-> and <abs> objects (see help) to make the values of the second
+slider complimentary to the first (i.e. their sum is always 127);
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;

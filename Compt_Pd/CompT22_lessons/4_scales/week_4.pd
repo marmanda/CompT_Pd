@@ -1,0 +1,118 @@
+#N canvas 132 43 1181 745 12;
+#X msg 65 73 60;
+#X msg 97 73 62;
+#X msg 130 73 64;
+#X msg 163 73 65;
+#X msg 195 73 67;
+#X msg 227 73 69;
+#X msg 261 73 71;
+#X msg 294 73 72;
+#X obj 64 122 makenote 90 300;
+#X obj 64 155 noteout 1;
+#X obj 328 106 loadbang;
+#X msg 328 129 0;
+#X obj 328 157 pgmout 1;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array scale 8 float 3;
+#A 0 0 2 4 5 7 9 11 12;
+#X coords 0 0 8 13 200 140 1;
+#X restore 51 708 graph;
+#X floatatom 539 783 5 0 0 1 index - -;
+#X floatatom 539 835 5 0 0 1 array_output - -;
+#X obj 505 1044 contatore;
+#X obj 504 1022 metro 500;
+#X obj 505 1112 + 60;
+#X obj 505 1139 makenote 90 300;
+#X obj 505 1166 noteout 1;
+#X obj 776 920 pgmout;
+#X msg 776 897 0;
+#X obj 776 869 loadbang;
+#X floatatom 689 984 5 0 0 0 fundamental_pitch - -;
+#X obj 503 967 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 689 1049 sel 7;
+#X msg 689 1089 0;
+#X obj 165 449 makenote 90 300;
+#X obj 165 482 noteout 1;
+#X msg 209 380 2;
+#X msg 249 380 4;
+#X msg 286 380 5;
+#X msg 323 380 7;
+#X msg 362 379 9;
+#X msg 401 379 11;
+#X msg 438 379 12;
+#X obj 165 415 + 0;
+#X floatatom 165 343 5 0 0 1 fundamental_pitch - -;
+#X msg 165 381 0;
+#X msg 284 709 \; scale resize 8 \; scale bounds 0 0 8 13 \; scale
+xlabel 15 0 1 2 3 4 5 6 7 \; scale yticks 0 1 1;
+#X msg 284 784 \; scale 0 0 2 4 5 7 9 11 12 \;;
+#X msg 284 821 \; scale 0 0 2 3 5 7 8 11 12 \;;
+#X obj 539 808 tabread scale;
+#X obj 505 1088 tabread scale;
+#X obj 503 991 t f b;
+#X text 45 876 The <tabread> object followed by the name of the array
+outputs the value paired with the array index.;
+#X text 32 19 WEEK 4_ Building the C major scale;
+#X text 38 190 This algorithm produces a scale that cannot be transposed
+without rewriting all the MIDI notes. This is because this algorithm
+is stiff and not reusable for other types of scales. To produce a more
+flexible algorithm it is necessary to build an higher level abstraction.
+The scale can be considered as the result of a fundamental pitch +
+the intervals of the scale (major second \, 2 \; major third 4 \; etc.)
+;
+#X text 44 548 A good degree of flexibility - i.e. changing the intervals
+depending on the type of scale - can be obtained through a dynamic
+system for storing the intervals. This system is represented by the
+<array> object.;
+#X text 44 606 The <array> can be visualized as a series of cells labeled
+with progressive indices. Each cell contains a value that can be output
+when the <array> receives the index as input. The content of the array
+can be easily changed with a message.;
+#X text 45 956 To realize the scale it is enough to link the inlet
+of <tabread> to the output of a <counter> that produces the sequence
+of indices. The values of the various cells (the intervals) are summed
+to the fundamental pitch \, which can be choosen by the user. This
+algorithm is general and flexible because allows the reproduction of
+various scales on every fundamental pitch.;
+#X connect 0 0 8 0;
+#X connect 1 0 8 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 14 0 43 0;
+#X connect 16 0 26 0;
+#X connect 16 0 44 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 19 1 20 1;
+#X connect 22 0 21 0;
+#X connect 23 0 22 0;
+#X connect 24 0 18 1;
+#X connect 25 0 45 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 29 0;
+#X connect 28 1 29 1;
+#X connect 30 0 37 0;
+#X connect 31 0 37 0;
+#X connect 32 0 37 0;
+#X connect 33 0 37 0;
+#X connect 34 0 37 0;
+#X connect 35 0 37 0;
+#X connect 36 0 37 0;
+#X connect 37 0 28 0;
+#X connect 38 0 37 1;
+#X connect 39 0 37 0;
+#X connect 43 0 15 0;
+#X connect 44 0 18 0;
+#X connect 45 0 17 0;
+#X connect 45 1 16 1;

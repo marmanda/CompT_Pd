@@ -1,0 +1,55 @@
+#N canvas 83 23 1282 814 12;
+#X obj 282 224 + 1;
+#X msg 316 189 0;
+#X obj 261 266 f;
+#X floatatom 261 293 5 0 0 2 - - -;
+#X obj 260 429 makenote 90 500;
+#X obj 262 459 noteout 1;
+#X msg 259 359 58;
+#X msg 303 359 60;
+#X msg 344 360 62;
+#X msg 383 359 63;
+#X msg 420 360 65;
+#X obj 371 458 pgmout 1;
+#X obj 125 200 metro 1000;
+#X obj 125 139 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 333 265 sel 5;
+#X msg 333 291 0;
+#X obj 125 165 t f b;
+#X obj 261 321 sel 0 1 2 3 4;
+#X text 123 111 1 reset and count automatically;
+#X text 392 261 2 the <sel> object can stop the <metro> automatically
+;
+#X text 178 500 go to counter5 -->;
+#X obj 349 500 counter5;
+#X text 26 18 4 - RESET \, COUNT AND STOP AUTOMATICALLY. With only
+one command (<toggle> on) reset the <counter> and start the <metro>.
+;
+#X obj 260 388 t f f;
+#X connect 0 0 2 1;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 2 0 0 0;
+#X connect 2 0 14 0;
+#X connect 3 0 17 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 6 0 23 0;
+#X connect 7 0 23 0;
+#X connect 8 0 23 0;
+#X connect 9 0 23 0;
+#X connect 10 0 23 0;
+#X connect 12 0 2 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 12 0;
+#X connect 16 1 1 0;
+#X connect 17 0 6 0;
+#X connect 17 1 7 0;
+#X connect 17 2 8 0;
+#X connect 17 3 9 0;
+#X connect 17 4 10 0;
+#X connect 23 0 4 0;
+#X connect 23 1 11 0;

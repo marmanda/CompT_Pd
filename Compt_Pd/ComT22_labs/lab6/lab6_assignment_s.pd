@@ -1,0 +1,99 @@
+#N canvas 1580 -9 1849 971 12;
+#X obj 114 203 random 80;
+#X obj 114 317 noteout 1;
+#X obj 114 151 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 114 175 metro 700;
+#X obj 209 151 random 800;
+#X obj 209 175 + 700;
+#X obj 115 286 makenote 80 1500;
+#X obj 558 152 vsl 15 128 0 127 0 0 empty sus sus 0 -9 0 10 -4034 -1
+-1 0 1;
+#X obj 558 296 ctlout 64 1;
+#X obj 136 367 chord_maker;
+#X msg 254 342 4 5 9;
+#X obj 135 390 makenote 50 2000;
+#X obj 135 414 noteout 2;
+#X obj 461 94 pgmout 1;
+#X obj 527 94 pgmout 2;
+#X msg 461 65 0;
+#X obj 461 30 loadbang;
+#X floatatom 568 60 5 0 0 0 - - -;
+#X msg 527 63 96;
+#X msg 226 320 2 3 4;
+#X obj 44 261 moses 50;
+#X obj 654 151 vsl 15 128 0 127 0 0 empty sus sus 0 -9 0 10 -4034 -1
+-1 0 1;
+#X obj 654 295 ctlout 64 2;
+#X obj 114 226 + 40;
+#X obj 344 277 + 2;
+#X obj 311 277 + 1;
+#X obj 377 278 + 3;
+#X obj 349 365 noteout 3;
+#X floatatom 657 60 5 0 0 0 - - -;
+#X obj 618 92 pgmout 3;
+#X msg 618 59 9;
+#X obj 422 307 pipe 100;
+#X obj 349 341 makenote 80 300;
+#X obj 556 338 vsl 15 128 0 127 0 0 empty vol vol 0 -9 0 10 -260097
+-1 -1 0 1;
+#X obj 559 487 ctlout 7 1;
+#X obj 652 341 vsl 15 128 0 127 0 0 empty vol vol 0 -9 0 10 -260097
+-1 -1 0 1;
+#X obj 751 340 vsl 15 128 0 127 0 0 empty vol vol 0 -9 0 10 -260097
+-1 -1 0 1;
+#X obj 650 489 ctlout 7 2;
+#X obj 754 489 ctlout 7 3;
+#X obj 309 239 clip 100 120;
+#X obj 117 259 clip 60 100;
+#X obj 752 150 vsl 15 128 0 127 0 0 empty sus sus 0 -9 0 10 -4034 -1
+-1 0 1;
+#X obj 752 294 ctlout 64 3;
+#X text 22 18 LAB6_Assignment. Think of the previous assignment(lab5)
+as an "Allegro" movement. Write now a patch for the production an "Adagio"
+movement. Pitches must be generated randomically in a range at you
+choice \; the speed must be slow but must change randomically at each
+new note. You can also program different streams \, chords \, pedals
+\, and so on....;
+#X connect 0 0 23 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 1 0;
+#X connect 6 1 1 1;
+#X connect 7 0 8 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 1;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 15 0 13 0;
+#X connect 16 0 15 0;
+#X connect 16 0 18 0;
+#X connect 16 0 30 0;
+#X connect 17 0 14 0;
+#X connect 18 0 14 0;
+#X connect 19 0 9 1;
+#X connect 20 0 9 0;
+#X connect 21 0 22 0;
+#X connect 23 0 20 0;
+#X connect 23 0 39 0;
+#X connect 23 0 40 0;
+#X connect 24 0 32 0;
+#X connect 25 0 31 0;
+#X connect 25 0 32 0;
+#X connect 26 0 32 0;
+#X connect 28 0 29 0;
+#X connect 30 0 29 0;
+#X connect 31 0 32 0;
+#X connect 32 0 27 0;
+#X connect 32 1 27 1;
+#X connect 33 0 34 0;
+#X connect 35 0 37 0;
+#X connect 36 0 38 0;
+#X connect 39 0 25 0;
+#X connect 39 0 24 0;
+#X connect 39 0 26 0;
+#X connect 40 0 6 0;
+#X connect 41 0 42 0;

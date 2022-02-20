@@ -1,0 +1,48 @@
+#N canvas 159 66 1256 695 12;
+#X obj 111 88 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 112 270 5 0 0 0 - - -;
+#X text 107 54 slider;
+#X obj 298 90 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 297 272 5 0 0 0 - - -;
+#X obj 208 85 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 208 271 5 0 0 0 - - -;
+#X obj 208 233 spigot;
+#X obj 250 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 397 232 sel 50;
+#X obj 398 274 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 435 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 390 97 30;
+#X msg 417 166 40;
+#X msg 454 73 50;
+#X msg 455 166 80;
+#X obj 543 87 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 543 275 5 0 0 0 - - -;
+#X obj 544 242 clip 50 80;
+#X obj 297 234 moses 50;
+#X floatatom 348 272 5 0 0 0 - - -;
+#X text 109 304 Exs. #2 Look at the effect of the <clip> object. Make
+a patch where the output is the same of the example above \, but without
+using the <clip> objects (and without changing the properties of the
+slider....);
+#X connect 0 0 1 0;
+#X connect 3 0 19 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 1;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 15 0 9 0;
+#X connect 16 0 18 0;
+#X connect 18 0 17 0;
+#X connect 19 0 4 0;
+#X connect 19 1 20 0;

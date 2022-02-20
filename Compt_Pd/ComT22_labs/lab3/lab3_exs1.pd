@@ -1,0 +1,7 @@
+#N canvas 157 122 981 416 12;
+#X text 34 16 LAB3_Exs. #1: Build the <COUNTER> abstraction 1) Starting
+from <counter1> find the essential parts of the counter 2) These may
+be encapsulated and saved in a patch called <counter> 3) This patch
+can be reused like every other Pd object if it is put in a folder called
+<abstraction> in the path search of Pd 4) How many inlets and outlets
+are necessary for the <counter> abstraction?;

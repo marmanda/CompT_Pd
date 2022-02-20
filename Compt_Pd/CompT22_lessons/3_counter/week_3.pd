@@ -1,0 +1,79 @@
+#N canvas 0 23 1440 820 12;
+#X obj 50 137 makenote 90 500;
+#X obj 175 190 pgmout 1;
+#X obj 52 188 noteout 1;
+#X msg 50 98 58;
+#X msg 91 98 60;
+#X msg 132 99 62;
+#X msg 171 98 63;
+#X msg 214 99 65;
+#X obj 54 300 makenote 90 500;
+#X obj 56 330 noteout 1;
+#X msg 51 240 58;
+#X msg 95 240 60;
+#X msg 136 241 62;
+#X msg 175 240 63;
+#X msg 218 241 65;
+#X obj 224 332 pgmout 1;
+#X obj 65 487 makenote 90 500;
+#X obj 67 517 noteout 1;
+#X msg 62 403 58;
+#X msg 106 403 60;
+#X msg 147 404 62;
+#X msg 186 404 63;
+#X msg 237 403 65;
+#X obj 226 519 pgmout 1;
+#X obj 225 487 random 128;
+#X obj 65 439 t f b;
+#X obj 52 269 t f f;
+#X msg 214 144 0;
+#X obj 203 625 counter1;
+#X text 240 265 <-- The <trigger> object routes the number first to
+the <pgmout> and then to the <makenote>. Now the MIDI pitch and timbre
+change are paired.;
+#X text 350 400 Instead here every time a MIDI pitch message is sent
+to the <trigger> object \, a random value for a new timbre is produced.
+;
+#X text 258 96 <-- but this patch does not work properly. The timbre
+changes only after the pitch has been played. This happens because
+the MIDI pitch message arrives before the program change. To avoid
+this it is necessary to control what message has to arrive before.
+This is made by the <trigger> object.;
+#X text 59 567 Now it should be fine to perform the scale without clicking
+the MIDI pitch messages in sequence by hand \, but automatically. This
+can be made through the creation of a <COUNTER> ----->;
+#X text 49 2 WEEK_3 COUNTER The algorithm below is a basic algorithm
+for performing the first five degrees of a Bb major scale with the
+timbre changing every time a new note is played.;
+#X connect 0 0 2 0;
+#X connect 0 1 2 1;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 10 0 26 0;
+#X connect 11 0 26 0;
+#X connect 12 0 26 0;
+#X connect 13 0 26 0;
+#X connect 14 0 26 0;
+#X connect 16 0 17 0;
+#X connect 16 1 17 1;
+#X connect 18 0 25 0;
+#X connect 19 0 25 0;
+#X connect 20 0 25 0;
+#X connect 21 0 25 0;
+#X connect 22 0 25 0;
+#X connect 24 0 23 0;
+#X connect 25 0 16 0;
+#X connect 25 1 24 0;
+#X connect 26 0 8 0;
+#X connect 26 1 15 0;
+#X connect 27 0 1 0;

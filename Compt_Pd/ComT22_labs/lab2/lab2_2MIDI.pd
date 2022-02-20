@@ -1,0 +1,46 @@
+#N canvas 128 57 1440 821 12;
+#X obj 35 223 noteout 1;
+#X msg 33 133 60;
+#X msg 82 132 64;
+#X msg 127 132 67;
+#X obj 36 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 490 113 vsl 15 128 0 127 0 0 empty mod mod 0 -9 0 10 -258113
+-1 -1 0 1;
+#X obj 492 262 ctlout 1 1;
+#X obj 580 112 vsl 15 128 0 127 0 0 empty vol vol 0 -9 0 10 -260097
+-1 -1 0 1;
+#X obj 583 261 ctlout 7 1;
+#X obj 672 114 vsl 15 128 0 127 0 0 empty pan pan 0 -9 0 10 -257985
+-1 -1 0 1;
+#X obj 673 262 ctlout 10 1;
+#X obj 772 110 vsl 15 128 0 127 0 0 empty sus sus 0 -9 0 10 -4034 -1
+-1 0 1;
+#X obj 776 263 ctlout 64 1;
+#X obj 493 330 pgmout 1;
+#X msg 200 133 67 \, 74;
+#X obj 34 182 makenote 100 2000;
+#X text 36 34 Two different ways of performing a chord;
+#X obj 494 301 r timbre;
+#X msg 327 125 \; timbre 34 \; mod 90 \; vol 40 \; pan 10 \; sus 70
+;
+#X msg 331 226 \; timbre 109 \; mod 0 \; vol 100 \; pan 110 \; sus
+80;
+#X msg 344 326 \; timbre 0 \; mod 0 \; vol 127 \; pan 64 \; sus 0 \;
+;
+#X text 321 31 These messages set modulation \, volume pan and sustain
+for each timbre;
+#X connect 1 0 15 0;
+#X connect 2 0 15 0;
+#X connect 3 0 15 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 11 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 0 0;
+#X connect 15 1 0 1;
+#X connect 17 0 13 0;

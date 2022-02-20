@@ -1,0 +1,48 @@
+#N canvas 80 23 1359 808 10;
+#X floatatom 507 233 5 0 0 0 - - -;
+#X msg 391 187 60 120;
+#X msg 450 188 67 120;
+#X msg 505 188 69 120;
+#X obj 611 133 vsl 15 128 36 83 0 0 empty empty empty 0 -9 0 10 -204800
+-1 -1 0 1;
+#X floatatom 611 274 5 0 0 0 - - -;
+#X floatatom 669 274 5 0 0 0 - - -;
+#X obj 387 106 noteout 1;
+#X msg 386 50 60;
+#X msg 424 51 120;
+#X obj 396 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 391 298 noteout 1;
+#X obj 669 308 pgmout 1;
+#X obj 394 351 loadbang;
+#X obj 392 268 makenote 80 300;
+#X text 260 105 MIDI output--->;
+#X text 468 51 <--- we need <makenote>!;
+#X text 20 11 Set Pd MIDI output to an external virtual sinth: Pd -->
+Preferences --> MIDI;
+#X obj 394 397 pgmout 1;
+#X msg 394 372 0;
+#X text 662 248 sets the timbre of channel 1;
+#X text 32 420 lab2_exs.#1 Write a patch that performs the first five
+degrees of Bb major scale \, each with a different timbre.;
+#X text 29 351 This is useful to inizialize the timbre at the opening
+of the patch;
+#X text 13 265 Outputs a note OFF message after having received the
+note ON in a time interval expressed in the second argument of <makenote>
+(duration);
+#X connect 0 0 14 2;
+#X connect 1 0 14 0;
+#X connect 2 0 14 0;
+#X connect 3 0 14 0;
+#X connect 4 0 5 0;
+#X connect 4 0 14 0;
+#X connect 6 0 12 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 10 0 8 0;
+#X connect 10 0 9 0;
+#X connect 13 0 19 0;
+#X connect 14 0 11 0;
+#X connect 14 1 11 1;
+#X connect 19 0 18 0;
+#X coords 0 0 1 1 85 60 0;

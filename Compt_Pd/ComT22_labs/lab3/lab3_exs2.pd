@@ -1,0 +1,54 @@
+#N canvas 54 23 1255 819 12;
+#X obj 40 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 41 230 contatore;
+#X obj 41 288 % 4;
+#X floatatom 79 311 5 0 0 0 - - -;
+#X floatatom 82 287 5 0 0 0 - - -;
+#X obj 42 377 sel 0 1 2 3;
+#X obj 41 412 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 180 414 bng 15 250 50 0 empty empty empty 17 7 0 10 -4032 -1
+-1;
+#X obj 60 412 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 82 413 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 101 413 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X msg 215 318 0;
+#X obj 43 347 spigot;
+#X obj 155 288 sel 15 16;
+#X msg 154 319 0;
+#X obj 40 198 metro 700;
+#X obj 40 172 t f f b;
+#X text 208 347 <-- the <spigot> object allows the passage of what
+receives in its left inlet if the right inlet is open (i.e. receives
+1). O closes the <spigot>.;
+#X text 38 13 LAB3_EXS.#2 - BUILD AN ABSTRACT MODEL OF MUSICAL FORM
+We saw that the combination of <metro> \, <counter> \, <sel> and <module>
+allows different musical forms. Using the same objects write a patch
+for the performance of the following: 4 bar \, tempo 4/4 \, a note
+every beat \, speed at yout choice. The 4 bars repeat always in the
+same way. A final event (a different note from the previous ones) closes
+the composition.;
+#X connect 0 0 16 0;
+#X connect 1 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 2 0 12 0;
+#X connect 4 0 13 0;
+#X connect 5 0 6 0;
+#X connect 5 1 8 0;
+#X connect 5 2 9 0;
+#X connect 5 3 10 0;
+#X connect 11 0 0 0;
+#X connect 12 0 5 0;
+#X connect 13 0 14 0;
+#X connect 13 1 11 0;
+#X connect 13 1 7 0;
+#X connect 14 0 12 1;
+#X connect 15 0 1 0;
+#X connect 16 0 15 0;
+#X connect 16 1 12 1;
+#X connect 16 2 1 1;

@@ -1,0 +1,11 @@
+#N canvas 399 187 908 464 12;
+#X obj 51 70 random 10;
+#X obj 51 100 + 1;
+#X obj 51 131 print;
+#X obj 51 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 107 101 why is this necessary to sum 1 to the output of <random>?
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
